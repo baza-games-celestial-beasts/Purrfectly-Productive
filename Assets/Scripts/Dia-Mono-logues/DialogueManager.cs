@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private float delayPauseInSeconds = 2;
     [SerializeField] private float delayLettersApp = 0.08f;
+
+    [SerializeField] private string skipAxis;
 
     private Queue<string> _sentences;
     private Queue<string> _letterColors;
@@ -23,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     private string _currentSentence;
     private string _currentLetterColors;
     private string _endDialogueKey = "Other";
+    #endregion
 
     public enum LogKey
     {
@@ -46,9 +49,9 @@ public class DialogueManager : MonoBehaviour
         _letterColors = new Queue<string>();
     }
 
-    public void OnInteract(InputAction.CallbackContext context)
+    private void Update()
     {
-        if (context.performed)
+        if (Input.GetAxis(skipAxis) > 0)
         {
             Skip();
         }
@@ -171,9 +174,6 @@ public class DialogueManager : MonoBehaviour
     public void StartMonologue(MonologueTrigger monologueTrigger)
     {
         _logKey = LogKey.Monologue;
-
-        SetMonologueStateToCats();
-
         _monologueTrigger = monologueTrigger;
         _sentencesIndex = 0;
 
@@ -325,7 +325,6 @@ public class DialogueManager : MonoBehaviour
         _monologueTrigger.IsOpen = false;
         _logKey = LogKey.Nothing;
         _monologueTrigger.ActionAfterEndMonologue();
-        SetMonologueStateToCats();
     }
 
     private string SetLetterColor(char code)
@@ -344,30 +343,6 @@ public class DialogueManager : MonoBehaviour
                 return "#EFEBEA";
             default:
                 return "#FFFFFF";
-        }
-    }
-
-    private void SetMonologueStateToCats()
-    {
-        GameObject[] cats = GameObject.FindGameObjectsWithTag("Cat");
-        GameObject[] catsReflection = GameObject.FindGameObjectsWithTag("CatReflection");
-
-        foreach (var cat in cats)
-        {
-            var playerComponent = cat.GetComponent<Player>();
-            if (playerComponent != null)
-            {
-                playerComponent.SetMonologueState(_logKey == LogKey.Monologue);
-            }
-        }
-
-        foreach (var cat in catsReflection)
-        {
-            var playerComponent = cat.GetComponent<Player>();
-            if (playerComponent != null)
-            {
-                playerComponent.SetMonologueState(_logKey == LogKey.Monologue);
-            }
         }
     }
 }
