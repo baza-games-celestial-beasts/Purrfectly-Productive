@@ -20,7 +20,7 @@ namespace Player
 
         public bool Contains(Item item) => items.Contains(item);
 
-        public Item Poll(Item item)
+        public Item Pop(Item item)
         {
             int i;
             for (i = 0; i < inventorySize; i++)
