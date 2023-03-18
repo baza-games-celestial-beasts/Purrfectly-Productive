@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Valve
+  m_Controller: {fileID: 9100000, guid: 21283203991be8b44ae0f52abc0137f5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ab4ea88377d110548af3ae01ef92052d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1505fc85ae50fed429d13db38ff90d1e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e44451529c1ec4e44b2338ea6775a6d7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c0d606608824cd847bb36831e957bd4b, type: 2}
