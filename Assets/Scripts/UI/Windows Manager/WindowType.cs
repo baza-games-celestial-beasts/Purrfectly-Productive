@@ -2,6 +2,7 @@
 {
     public enum WindowType
     {
-        
+        Main,
+        Options
     }
 }
