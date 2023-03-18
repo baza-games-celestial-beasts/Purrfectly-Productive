@@ -30,7 +30,7 @@ namespace Generator_Logic
         {
             _gameStateManager.Finish += TryStopCreating;
             _generator.OnBroken += TryStopCreating;
-            _generator.OnFix += StartCreatingCats;
+            _generator.OnFixed += StartCreatingCats;
             StartCreatingCats();
         }
 

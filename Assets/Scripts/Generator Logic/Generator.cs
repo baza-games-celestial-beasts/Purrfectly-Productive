@@ -27,17 +27,20 @@ namespace Generator_Logic
         [Inject] private GameStateManager _gameStateManager;
         
         public event Action OnBroken;
-        public event Action OnFix;
+        public event Action OnFixed;
         #endregion
 
         #region Monobehaviour Callbacks
         private void Start()
         {
             items = GetComponentsInChildren<GeneratorItem>();
+            foreach (var item in items)
+            {
+                item.OnFixed += FixItem;
+            }
             healthyItems.AddRange(items);
 
             StartCoroutine(BreakItems());
-
             _gameStateManager.Finish += StopAllCoroutines;
         }
         #endregion
@@ -58,6 +61,7 @@ namespace Generator_Logic
             var targetItem = healthyItems[targetIndex];
             healthyItems.RemoveAt(targetIndex);
             
+            targetItem.ChangeState(GeneratorItemState.Broken);
             brokenItems.Add(targetItem);
 
             if (brokenItems.Count >= brokenItemsToLose)
@@ -69,6 +73,17 @@ namespace Generator_Logic
             if (brokenItems.Count >= brokenItemsToStop)
             {
                 OnBroken?.Invoke();
+            }
+        }
+
+        private void FixItem(GeneratorItem targetItem)
+        {
+            brokenItems.Remove(targetItem);
+            healthyItems.Add(targetItem);
+            
+            if (brokenItems.Count == brokenItemsToStop - 1)
+            {
+                OnFixed?.Invoke();
             }
         }
     }

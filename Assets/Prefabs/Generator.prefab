@@ -5155,6 +5155,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 6847169050393877143}
 --- !u!1 &6847169049757117051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5275,6 +5276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169049823734524
 GameObject:
   m_ObjectHideFlags: 0
@@ -5396,6 +5398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 6847169051439639113}
 --- !u!1 &6847169049878669864
 GameObject:
   m_ObjectHideFlags: 0
@@ -5516,6 +5519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169050393877143
 GameObject:
   m_ObjectHideFlags: 0
@@ -5624,6 +5628,7 @@ GameObject:
   - component: {fileID: 6847169050508762187}
   - component: {fileID: 6847169050508762184}
   - component: {fileID: 7674456776463080451}
+  - component: {fileID: 77754115050973851}
   m_Layer: 0
   m_Name: Thermometer
   m_TagString: Untagged
@@ -5711,6 +5716,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
+--- !u!95 &77754115050973851
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050508762186}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6847169050537921263
 GameObject:
   m_ObjectHideFlags: 0
@@ -5722,6 +5749,7 @@ GameObject:
   - component: {fileID: 6847169050537921260}
   - component: {fileID: 6847169050537921261}
   - component: {fileID: 7643350310181626196}
+  - component: {fileID: 8129908185811144703}
   m_Layer: 0
   m_Name: Funnel
   m_TagString: Untagged
@@ -5809,6 +5837,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
+--- !u!95 &8129908185811144703
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050537921263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6847169050664731380
 GameObject:
   m_ObjectHideFlags: 0
@@ -5929,6 +5979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169050726800259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6049,6 +6100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169050750531204
 GameObject:
   m_ObjectHideFlags: 0
@@ -6248,6 +6300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169051216208636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6259,6 +6312,7 @@ GameObject:
   - component: {fileID: 6847169051216208637}
   - component: {fileID: 6847169051216208634}
   - component: {fileID: 7739356042061153472}
+  - component: {fileID: 5872388393986455249}
   m_Layer: 0
   m_Name: Tubing
   m_TagString: Untagged
@@ -6346,6 +6400,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
+--- !u!95 &5872388393986455249
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169051216208636}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6847169051314020661
 GameObject:
   m_ObjectHideFlags: 0
@@ -6466,6 +6542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 0}
 --- !u!1 &6847169051382540141
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,6 +6664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
+  patch: {fileID: 6847169051462200159}
 --- !u!1 &6847169051439639113
 GameObject:
   m_ObjectHideFlags: 0
