@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class GeneratorItem : MonoBehaviour
+namespace Generator
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GeneratorItem : MonoBehaviour
     {
-        
-    }
+        [SerializeField, ReadOnly] 
+        private GeneratorItemState currentState;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            
+        }
     }
 }
