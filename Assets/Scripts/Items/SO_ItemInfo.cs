@@ -18,5 +18,6 @@ public enum ItemType
     Coal,
     Wrench,
     Patch,
-    Battery
+    Battery,
+    Count
 }

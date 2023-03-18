@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class ItemEntity : MonoBehaviour
@@ -26,13 +27,14 @@ public class ItemEntity : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Inventory inventory = collision.GetComponent<Inventory>();
+        PlayerMovement player = collision.GetComponent<PlayerMovement>();
 
-        if(inventory != null)
+        if(player != null)
         {
-            if(inventory.CheckPutItem(itemType))
+            if(Game.inst.inventory.CheckPutItem(itemType))
             {
-                inventory.PutItem(itemType);
+                Game.inst.inventory.PutItem(itemType);
+                Game.inst.DestroyItem(this);
             }
         }
     }
