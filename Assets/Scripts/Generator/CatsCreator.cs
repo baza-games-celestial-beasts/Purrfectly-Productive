@@ -1,18 +1,51 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class CatsCreator : MonoBehaviour
+namespace Generator
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CatsCreator : MonoBehaviour
     {
-        
-    }
+        #region Variables
+        [SerializeField] private Transform spawnTransform;
+        [SerializeField] private GameObject cat;
+        [SerializeField] private float spawnTime;
+        [SerializeField] private float targetCount;
 
-    // Update is called once per frame
-    void Update()
-    {
+        public float TargetCount => targetCount;
+        public int CreatedCats {get; private set;}
+
+        private Coroutine creatingCoroutine;
+
+
+        [Inject] private DiContainer _diContainer;
+
+        public event Action OnCreatedCat;
+        #endregion
+        
+        private void Start()
+        {
+            StartCoroutine(CreateCats());
+        }
+
+        private IEnumerator CreateCats()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(spawnTime);
+                CreateCat();
+            }
+        }
+
+
+        private void CreateCat()
+        {
+            var createdCat = _diContainer.InstantiatePrefab(cat, spawnTransform);
+            CreatedCats++;
+            
+            OnCreatedCat?.Invoke();
+        }
         
     }
 }
