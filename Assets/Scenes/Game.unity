@@ -568,7 +568,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: 1.776357e-15, y: -0.000000029203735, z: 5.187626e-23, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000029203733, z: -0, w: 1}
   m_LocalPosition: {x: 0.651905, y: -0.056772623, z: -6.6724625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -862,8 +862,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1195974351}
-  - component: {fileID: 1195974350}
   - component: {fileID: 1195974352}
+  - component: {fileID: 1195974353}
   m_Layer: 0
   m_Name: '[Game]'
   m_TagString: Untagged
@@ -871,21 +871,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1195974350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1195974349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b3840dcd83804c72b96e098f4217e42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameUI: {fileID: 536591210}
-  inventory: {fileID: 1195974352}
-  itemEntityPrefab: {fileID: 3460803668149236378, guid: 3e7583c81d1ef49e2a7b93a5b0c5cc29, type: 3}
 --- !u!4 &1195974351
 Transform:
   m_ObjectHideFlags: 0
@@ -914,6 +899,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+--- !u!114 &1195974353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195974349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3840dcd83804c72b96e098f4217e42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameUI: {fileID: 536591210}
+  inventory: {fileID: 1195974352}
+  itemEntityPrefab: {fileID: 4729367613463072328, guid: 3e7583c81d1ef49e2a7b93a5b0c5cc29, type: 3}
 --- !u!1 &1248191777
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,15 +1389,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 1.776357e-15
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029203735
+      value: -0.000000029203733
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.187626e-23
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7570954202480776968, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_RootOrder
