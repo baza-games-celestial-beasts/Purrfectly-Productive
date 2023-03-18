@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Scripts/Utils/Cooldown.cs.meta
-guid: 9e5353cda2ac92b4eb93a127f49f87fb
-========
-guid: 10f3658eeceba49c8826eb0c1fbffa93
->>>>>>>> stas_002:Assets/Scripts/Items/ItemEntity.cs.meta
+guid: 5d8bbb9507ba04244bccc98f26e55441
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
