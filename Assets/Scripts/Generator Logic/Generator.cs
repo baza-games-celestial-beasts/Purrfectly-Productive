@@ -26,12 +26,26 @@ namespace Generator_Logic
 
         [Inject] private GameStateManager _gameStateManager;
         
+        public GeneratorItemState GeneratorState => brokenItems.Count >= brokenItemsToStop
+            ? GeneratorItemState.Broken
+            : GeneratorItemState.Health;
+        
         public event Action OnBroken;
         public event Action OnFixed;
         #endregion
 
-        #region Monobehaviour Callbacks
+        #region Properties
+        public float GeneratorStopTime => breakTime * (brokenItemsToLose - brokenItemsToStop);
+        public float FullTimeToDeath => breakTime * brokenItemsToLose;
+        public float LeftTimeToDeath => breakTime * (brokenItemsToLose - brokenItems.Count);
+        #endregion
+
         private void Start()
+        {
+            Init();
+        }
+
+        private void Init()
         {
             items = GetComponentsInChildren<GeneratorItem>();
             foreach (var item in items)
@@ -43,7 +57,6 @@ namespace Generator_Logic
             StartCoroutine(BreakItems());
             _gameStateManager.Finish += StopAllCoroutines;
         }
-        #endregion
 
         private IEnumerator BreakItems()
         {
