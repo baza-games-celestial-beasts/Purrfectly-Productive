@@ -1,4 +1,4 @@
-using Generator;
+using Generator_Logic;
 using TMPro;
 using UnityEngine;
 using Zenject;

@@ -1,13 +1,16 @@
+using System;
 using UnityEngine;
 
-namespace Generator
+namespace Generator_Logic
 {
     public class Generator : MonoBehaviour
     {
         #region Variables
         private GeneratorItem[] items;
-        #endregion
 
+        public event Action OnBroken;
+        public event Action OnFix;
+        #endregion
 
         #region Monobehaviour Callbacks
         private void Start()

@@ -1,7 +1,7 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace Generator
+namespace Generator_Logic
 {
     public class GeneratorItem : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-namespace Generator
+namespace Generator_Logic
 {
     public enum GeneratorItemState
     {

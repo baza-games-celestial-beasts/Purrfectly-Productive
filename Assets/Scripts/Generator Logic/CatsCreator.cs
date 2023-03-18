@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
+using Managers.Game_States;
 using UnityEngine;
 using Zenject;
 
-namespace Generator
+namespace Generator_Logic
 {
     public class CatsCreator : MonoBehaviour
     {
@@ -18,7 +19,8 @@ namespace Generator
 
         private Coroutine creatingCoroutine;
 
-
+        [Inject] private GameStateManager _gameStateManager;
+        [Inject] private Generator _generator;
         [Inject] private DiContainer _diContainer;
 
         public event Action OnCreatedCat;
@@ -26,7 +28,10 @@ namespace Generator
         
         private void Start()
         {
-            StartCoroutine(CreateCats());
+            _gameStateManager.Finish += TryStopCreating;
+            _generator.OnBroken += TryStopCreating;
+            _generator.OnFix += StartCreatingCats;
+            StartCreatingCats();
         }
 
         private IEnumerator CreateCats()
@@ -45,7 +50,24 @@ namespace Generator
             CreatedCats++;
             
             OnCreatedCat?.Invoke();
+
+            if (CreatedCats >= TargetCount)
+            {
+                _gameStateManager.ChangeState(GameState.Victory);
+            }
+        }
+
+        private void StartCreatingCats()
+        {
+            TryStopCreating();
+            
+            creatingCoroutine = StartCoroutine(CreateCats());
         }
         
+        private void TryStopCreating()
+        {
+            if (creatingCoroutine != null)
+                StopCoroutine(creatingCoroutine);
+        }
     }
 }
