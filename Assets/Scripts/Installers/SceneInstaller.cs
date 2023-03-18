@@ -9,11 +9,11 @@ namespace Installers
 {
     public class SceneInstaller : MonoInstaller
     {
-        [SerializeField] private PlayerInventory playerInventory;
+        [SerializeField] private Inventory playerInventory;
         
         public override void InstallBindings()
         {
-            Container.Bind<PlayerInventory>().FromInstance(playerInventory).AsSingle();
+            Container.Bind<Inventory>().FromInstance(playerInventory).AsSingle();
         }
     }
 }
