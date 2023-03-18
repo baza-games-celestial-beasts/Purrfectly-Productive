@@ -6,7 +6,7 @@ using Zenject;
 namespace UI.Menu
 {
     [RequireComponent(typeof(Button))]
-    public class OpenGameButton : OnClickButton
+    public class StartGameButton : OnClickButton
     {
         [Inject] private MySceneManager _mySceneManager;
         
