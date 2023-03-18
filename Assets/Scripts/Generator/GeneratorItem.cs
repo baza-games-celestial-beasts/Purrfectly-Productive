@@ -1,5 +1,4 @@
-using System;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Generator

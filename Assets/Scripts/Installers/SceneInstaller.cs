@@ -1,8 +1,6 @@
-﻿using Managers.Game_States;
-using Managers.Scene_Manager;
+﻿using Generator;
 using Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Installers
@@ -10,10 +8,12 @@ namespace Installers
     public class SceneInstaller : MonoInstaller
     {
         [SerializeField] private PlayerInventory playerInventory;
+        [SerializeField] private CatsCreator catsCreator;
         
         public override void InstallBindings()
         {
             Container.Bind<PlayerInventory>().FromInstance(playerInventory).AsSingle();
+            Container.Bind<CatsCreator>().FromInstance(catsCreator).AsSingle();
         }
     }
 }
