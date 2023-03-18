@@ -28,11 +28,6 @@ public class KittenController : MonoBehaviour
         _cooldown.ValueOfCooldown = valueOfCooldown;
     }
 
-    private void Start()
-    {
-        ChooseMovingVector();
-    }
-
     private void Update()
     {
         if (_cooldown.IsReady)
