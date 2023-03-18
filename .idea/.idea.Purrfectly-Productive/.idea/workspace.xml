@@ -271,7 +271,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/Cooldown.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/PlayerAnimator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitten/KittenController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -324,8 +326,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679141593112</updated>
-      <workItem from="1679141599380" duration="7016000" />
-      <workItem from="1679160220076" duration="384000" />
     </task>
     <servers />
   </component>

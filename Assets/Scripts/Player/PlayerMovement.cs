@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Player
@@ -12,14 +11,14 @@ namespace Player
         [SerializeField] private string horizontalAxis = "Horizontal";
         [SerializeField] private string verticalAxis = "Vertical";
         [SerializeField] private PlayerAnimator playerAnimator;
-
+        
         private Rigidbody2D _rigidbody2D;
 
         #endregion
 
         #region Monobehaviour Callbacks
 
-        private void Start()
+        private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
