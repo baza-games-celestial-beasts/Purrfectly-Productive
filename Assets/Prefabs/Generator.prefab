@@ -1017,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6847169050750531205}
   - component: {fileID: 7194646523376862072}
+  - component: {fileID: 4381782653995503096}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -1063,6 +1064,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6441352327dc1294c87f06188f5de590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &4381782653995503096
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050750531204}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000000049403326, y: -0.9585577}
+  m_Size: {x: 2.3384264, y: 1.338049}
+  m_Direction: 1
 --- !u!1 &6847169050750578255
 GameObject:
   m_ObjectHideFlags: 0
