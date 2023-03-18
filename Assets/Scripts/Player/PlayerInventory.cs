@@ -18,40 +18,57 @@ namespace Player
             items = new Item[inventorySize];
         }
 
-        public bool Contains(Item item) => items.Contains(item);
+        public bool Contains(ItemType type) => items.Select(it => it.Type).Contains(type);
+        
+        public bool Push(Item item)
+        {
+            var i = Find(ItemType.Empty);
+            if (i < inventorySize)
+            {
+                items[i] = item;
+            }
 
-        public Item Pop(Item item)
+            return i < inventorySize;
+        }
+
+        public void Use(ItemType type)
+        {
+            var i = Find(type);
+            if (i >= inventorySize) return;
+            
+            if (!items[i].Use())
+            {
+                Pop(i);
+            }
+        }
+
+        public Item Pop(ItemType type)
+        {
+            var i = Find(type);
+            return i < inventorySize ? Pop(i) : null;
+        }
+
+        public Item Pop(int index)
+        {
+            var res = items[index];
+            items[index] = null;
+            return res;
+        }
+
+        public int Find(ItemType type)
         {
             int i;
             for (i = 0; i < inventorySize; i++)
             {
-                if (item.Equals(items[i]))
+                if (items[i].Type == ItemType.Empty)
                 {
                     break;
                 }
             }
 
-            var res = items[i];
-            if (i < inventorySize)
-            {
-                items[i] = Item.Empty;
-            }
-
-            return res;
+            return i;
         }
 
-        public bool Push(Item item)
-        {
-            for (int i = 0; i < inventorySize; i++)
-            {
-                if (items[i].Equals(Item.Empty))
-                {
-                    items[i] = item;
-                    return true;
-                }
-            }
-
-            return false;
-        }
+        public Item Get(int index) => items[index];
     }
 }
