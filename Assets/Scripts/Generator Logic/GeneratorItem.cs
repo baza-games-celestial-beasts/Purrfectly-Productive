@@ -8,15 +8,21 @@ namespace Generator_Logic
     public class GeneratorItem : MonoBehaviour, IInteractable
     {
         #region Variables
+        [Header("Settings")]
         [SerializeField, ReadOnly] 
-        private GeneratorItemState currentState;
-        [SerializeField] private Transform popUpTransform;
+        private GeneratorItemState currentState;        
         [Space(10)]
         [SerializeField, TextArea] private string requiredItemText;
         [SerializeField, TextArea] private string interactText;
         [SerializeField] private ItemType targetItem;
+        [SerializeField] private bool canFixOnLadderOnly;
+        [SerializeField] private bool blinkOnBroken;
+
+        [Header("Links")]
         [SerializeField] private GameObject patch;
-        
+        [SerializeField] private SpriteRenderer rend;
+        [SerializeField] private Transform popUpTransform;
+
         public Vector2 popupPos => popUpTransform.position + Vector3.up * 0.5f;
 
         private Animator _animator;
@@ -25,12 +31,13 @@ namespace Generator_Logic
 
         private Collider2D _interactionCollider;
 
-        private bool CanFix => Game.inst.inventory.TryTakeItem(targetItem);
-        
+        private bool CanFix => Game.inst.inventory.TryTakeItem(targetItem) && CheckLadder;
+        private bool CheckLadder => !canFixOnLadderOnly || (canFixOnLadderOnly && Game.inst.player.isOnLadder);
+
         public event Action<GeneratorItem> OnFixed;
         public event Action<GeneratorItem> OnBroken; 
         #endregion
-        
+
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -80,7 +87,24 @@ namespace Generator_Logic
         {
             ChangeState(GeneratorItemState.Fixed);
         }
-        
+
+        // For test only!!
+        [Button("Break item")]
+        private void SetStateToBroken() {
+            ChangeState(GeneratorItemState.Broken);
+        }
+
+        private void Update() {
+            if (blinkOnBroken) {
+                if (currentState == GeneratorItemState.Broken) {
+                    float t = (Mathf.Sin(Time.time * 7f) + 1) * 0.5f;
+                    rend.color = Color.Lerp(Color.white, Color.red, t * 0.4f);
+                } else {
+                    rend.color = Color.white;
+                }
+            }
+        }
+
         private void UpdatePatch()
         {
             if (patch != null)
@@ -102,6 +126,9 @@ namespace Generator_Logic
 
         public string InteractText()
         {
+            if (!CheckLadder)
+                return "";
+
             return CanFix ? interactText : requiredItemText;
         }
     }
