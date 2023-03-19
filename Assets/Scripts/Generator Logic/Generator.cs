@@ -26,7 +26,7 @@ namespace Generator_Logic
 
         [Inject] private GameStateManager _gameStateManager;
         
-        public GeneratorItemState GeneratorState => brokenItems.Count >= brokenItemsToStop
+        public GeneratorItemState GeneratorState => BrokenItemsCount >= brokenItemsToStop
             ? GeneratorItemState.Broken
             : GeneratorItemState.Health;
         
@@ -37,7 +37,9 @@ namespace Generator_Logic
         #region Properties
         public float GeneratorStopTime => breakTime * (brokenItemsToLose - brokenItemsToStop);
         public float FullTimeToDeath => breakTime * brokenItemsToLose;
-        public float LeftTimeToDeath => breakTime * (brokenItemsToLose - brokenItems.Count);
+        public float LeftTimeToDeath => breakTime * (brokenItemsToLose - BrokenItemsCount);
+
+        public int BrokenItemsCount => brokenItems.Count;
         #endregion
 
         private void Start()
@@ -70,6 +72,9 @@ namespace Generator_Logic
 
         private void BreakItem()
         {
+            if (healthyItems.Count == 0)
+                return;
+            
             var targetIndex = Random.Range(0, healthyItems.Count);
             var targetItem = healthyItems[targetIndex];
             healthyItems.RemoveAt(targetIndex);

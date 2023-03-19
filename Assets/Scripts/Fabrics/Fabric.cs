@@ -61,6 +61,10 @@ namespace Fabrics
             state = FabricState.Idle;
             craftProgress = 0f;
             fillIndicator.fillAmount = 0f;
+
+            if(outputItem.type == ItemType.Iron || outputItem.type == ItemType.Patch || outputItem.type == ItemType.Wrench) {
+                MSound.Play("anvil_hit", transform.position, 1.0f);
+            }
         }
 
         /*

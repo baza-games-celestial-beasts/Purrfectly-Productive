@@ -62,6 +62,7 @@ public class ItemEntity : MonoBehaviour, IInteractable
         if (Game.inst.inventory.TryPutItem(itemType)) {
             Game.inst.inventory.PutItem(itemType);
             OnItemPickup?.Invoke(this);
+            MSound.Play("pickup_item", transform.position, 1.0f);
 
             Game.inst.DestroyItem(this);
         }

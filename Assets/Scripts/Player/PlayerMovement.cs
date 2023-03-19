@@ -13,12 +13,14 @@ namespace Player
         [SerializeField] private string horizontalAxis = "Horizontal";
         [SerializeField] private string verticalAxis = "Vertical";
         [SerializeField] private PlayerAnimator playerAnimator;
+        [SerializeField] Renderer _renderer;
         
         private Rigidbody2D _rigidbody2D;
 
         public PlayerMoveState moveState { get; private set; }
         private float ladderY;
         public Ladder targetLadder;
+        
 
         [Inject] private GameStateManager _gameStateManager;
         #endregion
@@ -28,7 +30,6 @@ namespace Player
         private void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
-
             _gameStateManager.Finish += DisableMotion;
             SetMoveState(PlayerMoveState.Walk);
         }
@@ -46,12 +47,15 @@ namespace Player
         public void SetMoveState(PlayerMoveState _moveState) {
             moveState = _moveState;
 
-            if(moveState == PlayerMoveState.LadderClimb) {
+            if(moveState == PlayerMoveState.LadderClimb)
+            {
+                _renderer.sortingOrder = 1;
                 ladderY = 0f;
                 _rigidbody2D.isKinematic = true;
                 playerAnimator.SetIsClimbState(true);
                 playerAnimator.SetIsMoveState(false);                
             } else {
+                _renderer.sortingOrder = 0;
                 playerAnimator.SetIsClimbState(false);
                 playerAnimator.SetIsMoveState(true);
                 playerAnimator.SetClimbSpeed(1.0f);

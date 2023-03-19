@@ -63,9 +63,9 @@ Transform:
   - {fileID: 3769176652962921271}
   - {fileID: 6847169051216208637}
   - {fileID: 280538187086270681}
-  - {fileID: 6847169050537921260}
+  - {fileID: 6847169050508762187}
   m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &645758256934741857
 GameObject:
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1649087592726070627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,7 +170,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 10
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9e38a75844d7e7b4282403a0c3374ea1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -256,7 +256,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingOrder: -1
   m_Sprite: {fileID: 44799203, guid: 27cab0ed7843d2640be3ef69ad335168, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   hotFireController: {fileID: 22100000, guid: 5389e581ddcfd0e4b9d88214b51eb702, type: 2}
   coldFireController: {fileID: 22100000, guid: 5c0e4194e601d98438c86c5990176f6f, type: 2}
   wing: {fileID: 2725408694601210886}
-  thermometer: {fileID: 1492045732743177579}
+  thermometer: {fileID: 3755189598197948542}
 --- !u!1 &2525767146937207806
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,11 +422,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3210132727038556129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 3.26, z: 0}
+  m_LocalPosition: {x: -0.089, y: 3.878, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6847169050508762187}
+  m_Father: {fileID: 6847169050537921260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3595233381868977122
@@ -5465,7 +5465,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 107a7ace1ab6f8b4f932a6789bd2f785, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5511,11 +5511,59 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 2224714986139410955}
   requiredItemText: "\u041D\u0443\u0436\u043D\u0430 \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0430"
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0443"
   targetItem: 6
+  canFixOnLadderOnly: 1
+  blinkOnBroken: 1
   patch: {fileID: 6847169050393877143}
+  rend: {fileID: 6847169049629902424}
+  popUpTransform: {fileID: 2224714986139410955}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392839160346094661}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169049629902427}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 392839160346094661}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &6953073697941711791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5576,7 +5624,7 @@ Transform:
   m_Children:
   - {fileID: 2706150403964848447}
   m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169049757117030
 SpriteRenderer:
@@ -5640,7 +5688,7 @@ Animator:
   m_GameObject: {fileID: 6847169049757117051}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 9b6d62c8beacd9b4295f9e2564e734f0, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7ee4a7fced8ed1543b8b3b0db6cbb3e8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5664,12 +5712,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 2706150403964848447}
   requiredItemText: "\u041D\u0443\u0436\u0435\u043D \u0433\u0430\u0435\u0447\u043D\u044B\u0439
     \u043A\u043B\u044E\u0447"
   interactText: "\u041F\u043E\u0434\u043A\u0440\u0443\u0442\u0438\u0442\u044C [E]"
   targetItem: 5
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
   patch: {fileID: 0}
+  rend: {fileID: 6847169049757117030}
+  popUpTransform: {fileID: 2706150403964848447}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169049757117049}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: twist
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &9057633439417346940
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5724,7 +5796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6847169049823734524}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5773,7 +5845,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 68f89f443114b38468ffc51ad346ac61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5819,11 +5891,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 8060318189597819079}
   requiredItemText: "\u041D\u0443\u0436\u043D\u0430 \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0430"
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0443"
   targetItem: 6
+  canFixOnLadderOnly: 1
+  blinkOnBroken: 1
   patch: {fileID: 6847169051439639113}
+  rend: {fileID: 6847169049823734523}
+  popUpTransform: {fileID: 8060318189597819079}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169049823734522}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &7247459022327166454
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5884,7 +5980,7 @@ Transform:
   m_Children:
   - {fileID: 6011428510796739206}
   m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169049878669847
 SpriteRenderer:
@@ -5926,7 +6022,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 882d337e5512bb545b16e3edd37f696e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5948,7 +6044,7 @@ Animator:
   m_GameObject: {fileID: 6847169049878669864}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 364077c69448eb14d99f49801dbd28c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1e112dde545a6d34b960d09712fbd5aa, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5972,12 +6068,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 6011428510796739206}
   requiredItemText: "\u041D\u0443\u0436\u0435\u043D \u0433\u0430\u0435\u0447\u043D\u044B\u0439
     \u043A\u043B\u044E\u0447"
   interactText: "\u041F\u043E\u0434\u043A\u0440\u0443\u0442\u0438\u0442\u044C [E]"
   targetItem: 5
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
   patch: {fileID: 0}
+  rend: {fileID: 6847169049878669847}
+  popUpTransform: {fileID: 6011428510796739206}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169049878669846}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: twist
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1337729591611037029
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6111,9 +6231,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6847169050508762187}
   - component: {fileID: 6847169050508762184}
-  - component: {fileID: 77754115050973851}
-  - component: {fileID: 1492045732743177579}
-  - component: {fileID: 5106526393419198886}
   m_Layer: 0
   m_Name: Thermometer
   m_TagString: Untagged
@@ -6132,10 +6249,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2019742162022195250}
-  m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 9
+  m_Children: []
+  m_Father: {fileID: 3399427443209855017}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050508762184
 SpriteRenderer:
@@ -6177,7 +6293,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3bf0677833ef07c4e9ab49d192e5e06f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6189,71 +6305,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &77754115050973851
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1492045732743177579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  popUpTransform: {fileID: 2019742162022195250}
-  requiredItemText: 
-  interactText: 
-  targetItem: 0
-  patch: {fileID: 0}
---- !u!61 &5106526393419198886
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5584244, y: 2.9472015}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 8, y: 4}
-    newSize: {x: 8, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.46479928, y: 0.55048895}
-  m_EdgeRadius: 0
 --- !u!1 &6847169050537921263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6265,6 +6316,8 @@ GameObject:
   - component: {fileID: 6847169050537921260}
   - component: {fileID: 6847169050537921261}
   - component: {fileID: 8129908185811144703}
+  - component: {fileID: 3755189598197948542}
+  - component: {fileID: 3404783575811436260}
   m_Layer: 0
   m_Name: Funnel
   m_TagString: Untagged
@@ -6283,9 +6336,10 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3399427443209855017}
-  m_RootOrder: 4
+  m_Children:
+  - {fileID: 2019742162022195250}
+  m_Father: {fileID: 6847169050750531205}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050537921261
 SpriteRenderer:
@@ -6360,6 +6414,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3755189598197948542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050537921263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  requiredItemText: "\u041D\u0443\u0436\u0435\u043D \u0443\u0433\u043E\u043B\u044C"
+  interactText: "\u0417\u0430\u043A\u0438\u043D\u0443\u0442\u044C \u0443\u0433\u043E\u043B\u044C
+    [E]"
+  targetItem: 0
+  canFixOnLadderOnly: 1
+  blinkOnBroken: 1
+  patch: {fileID: 0}
+  rend: {fileID: 6847169050537921261}
+  popUpTransform: {fileID: 2019742162022195250}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!61 &3404783575811436260
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050537921263}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.5985193}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 8, y: 4}
+    newSize: {x: 8, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4569805, y: 0.8029611}
+  m_EdgeRadius: 0
 --- !u!1 &6847169050664731380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6371,8 +6482,7 @@ GameObject:
   - component: {fileID: 6847169050664731381}
   - component: {fileID: 6847169050664731379}
   - component: {fileID: 6847169050664731378}
-  - component: {fileID: 6892811254998000551}
-  - component: {fileID: 505870019595362309}
+  - component: {fileID: 5355867482888785154}
   m_Layer: 0
   m_Name: Tablet
   m_TagString: Untagged
@@ -6388,13 +6498,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6847169050664731380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -2.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 100881672205325953}
   m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 5
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050664731379
 SpriteRenderer:
@@ -6436,7 +6546,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 833ed9699ba55b14ba8e1b1899683c1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6469,7 +6579,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6892811254998000551
+--- !u!114 &5355867482888785154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6478,41 +6588,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 6847169050664731380}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
+  m_Script: {fileID: 11500000, guid: 2af4aa75a52d4b3eaa66f03dbb326e80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 0
-  popUpTransform: {fileID: 100881672205325953}
-  requiredItemText: 
-  interactText: 
-  targetItem: 0
-  patch: {fileID: 0}
---- !u!61 &505870019595362309
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050664731380}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.0616629, y: 2.0829802}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 8, y: 4}
-    newSize: {x: 8, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6425519, y: 0.84596324}
-  m_EdgeRadius: 0
+  brokenItemsToDisplay: 7
+  fixedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050664731378}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Healthy
+          m_BoolArgument: 0
+        m_CallState: 2
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050664731378}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6847169050726800259
 GameObject:
   m_ObjectHideFlags: 0
@@ -6541,13 +6650,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6847169050726800259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -1.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 320845159390140918}
   m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050726800270
 SpriteRenderer:
@@ -6635,11 +6744,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 320845159390140918}
   requiredItemText: "\u041D\u0443\u0436\u043D\u044B \u043D\u0438\u0442\u043A\u0438"
   interactText: "\u0417\u0430\u0448\u0438\u0442\u044C [E]"
   targetItem: 8
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
   patch: {fileID: 0}
+  rend: {fileID: 6847169050726800270}
+  popUpTransform: {fileID: 320845159390140918}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050726800257}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Healthy
+          m_BoolArgument: 0
+        m_CallState: 2
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050726800257}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &8042263472709663236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6704,12 +6849,12 @@ Transform:
   - {fileID: 6847169049629902426}
   - {fileID: 6847169050750578252}
   - {fileID: 6847169051314020658}
-  - {fileID: 6847169050664731381}
   - {fileID: 6847169049757117048}
   - {fileID: 6847169049878669865}
   - {fileID: 6847169050726800256}
-  - {fileID: 6847169050508762187}
+  - {fileID: 6847169050537921260}
   - {fileID: 3399427443209855017}
+  - {fileID: 6847169050664731381}
   - {fileID: 1861005614}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -6898,7 +7043,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2051590541
   m_SortingLayer: 1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aee05791f5d0a3c45ae0818c5606f55b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6944,11 +7089,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 5162615973174387928}
   requiredItemText: "\u041D\u0443\u0436\u043D\u0430 \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0430"
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0443"
   targetItem: 7
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
   patch: {fileID: 0}
+  rend: {fileID: 6847169050750578250}
+  popUpTransform: {fileID: 5162615973174387928}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050750578253}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Healthy
+          m_BoolArgument: 0
+        m_CallState: 2
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169050750578253}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &3841257782173608285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7092,8 +7273,8 @@ GameObject:
   - component: {fileID: 6847169051314020658}
   - component: {fileID: 6847169051314020656}
   - component: {fileID: 6847169051314020659}
-  - component: {fileID: 7159332441280527822}
   - component: {fileID: 4936629340602536498}
+  - component: {fileID: 7750265067520487227}
   m_Layer: 0
   m_Name: ForPaws
   m_TagString: Untagged
@@ -7190,25 +7371,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7159332441280527822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169051314020661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  popUpTransform: {fileID: 7128065101949804474}
-  requiredItemText: "\u041D\u0443\u0436\u043D\u043E \u043F\u043E\u043C\u044B\u0442\u044C
-    \u043B\u0430\u043F\u044B"
-  interactText: "\u0422\u0430\u043F\u043D\u0443\u0442\u044C [E]"
-  targetItem: 0
-  patch: {fileID: 0}
 --- !u!61 &4936629340602536498
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7235,6 +7397,61 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6162711, y: 0.65526867}
   m_EdgeRadius: 0
+--- !u!114 &7750265067520487227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169051314020661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e5dbfc29f24d3187874062b9990ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  requiredItemText: "\u041D\u0443\u0436\u043D\u043E \u043F\u043E\u043C\u044B\u0442\u044C
+    \u043B\u0430\u043F\u044B"
+  interactText: "\u0422\u0430\u043F\u043D\u0443\u0442\u044C [E]"
+  targetItem: 0
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
+  patch: {fileID: 0}
+  rend: {fileID: 6847169051314020656}
+  popUpTransform: {fileID: 7128065101949804474}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169051314020659}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Healthy
+          m_BoolArgument: 0
+        m_CallState: 2
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169051314020659}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6847169051382540141
 GameObject:
   m_ObjectHideFlags: 0
@@ -7269,6 +7486,7 @@ Transform:
   m_Children:
   - {fileID: 6847169051462200156}
   - {fileID: 1309125398896121821}
+  - {fileID: 8106255389322482144}
   m_Father: {fileID: 6847169050750531205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7358,11 +7576,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  popUpTransform: {fileID: 1309125398896121821}
   requiredItemText: "\u041D\u0443\u0436\u043D\u0430 \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0430"
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0443"
   targetItem: 6
+  canFixOnLadderOnly: 0
+  blinkOnBroken: 1
   patch: {fileID: 6847169051462200159}
+  rend: {fileID: 6847169051382540136}
+  popUpTransform: {fileID: 1309125398896121821}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6847169051382540139}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Broken
+          m_BoolArgument: 0
+        m_CallState: 2
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!61 &3798605787837299791
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7583,6 +7825,90 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35ff780d20078a246a79b336319427db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &6848561947647853658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8106255389322482144}
+  - component: {fileID: 7205155504718888688}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8106255389322482144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848561947647853658}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6847169051382540138}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &7205155504718888688
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6848561947647853658}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -3
+  m_Sprite: {fileID: 21300000, guid: 8097778547b3d5941a939a7e53aff667, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 8, y: 4}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &7896581920209032148
 GameObject:
   m_ObjectHideFlags: 0
