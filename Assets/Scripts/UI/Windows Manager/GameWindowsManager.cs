@@ -45,6 +45,9 @@ namespace UI.Windows_Manager
 
         private void CanvasGroupSwap(CanvasGroup canvasGroup, bool isEnabled)
         {
+            if (canvasGroup == null)
+                return;
+            
             canvasGroup.DOFade(isEnabled? 1 : 0, SwapDuration);
 
             canvasGroup.interactable = isEnabled;
