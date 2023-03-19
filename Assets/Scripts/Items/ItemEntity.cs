@@ -69,6 +69,6 @@ public class ItemEntity : MonoBehaviour, IInteractable
     }
 
     public string InteractText() {
-        return "Pick [E]";
+        return "Поднять [E]";
     }
 }

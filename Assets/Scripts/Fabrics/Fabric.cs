@@ -99,7 +99,7 @@ namespace Fabrics
         }
 
         public string InteractText() {
-            return "Craft [E]";
+            return "Скрафтить [E]";
         }
     }
 
