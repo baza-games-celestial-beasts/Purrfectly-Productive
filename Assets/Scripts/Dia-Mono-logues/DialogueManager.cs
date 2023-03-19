@@ -8,7 +8,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float delayPauseInSeconds = 2;
     [SerializeField] private float delayLettersApp = 0.08f;
 
-    [SerializeField] private string skipAxis;
+    // [SerializeField] private string skipAxis;
 
     private Queue<string> _sentences;
     private Queue<string> _letterColors;
@@ -25,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     private string _currentSentence;
     private string _currentLetterColors;
     private string _endDialogueKey = "Other";
+    private KeyCode[] keyCodesSkip = { KeyCode.KeypadEnter, KeyCode.Space};
+
     #endregion
 
     public enum LogKey
@@ -51,10 +53,18 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis(skipAxis) > 0)
+        if (getKeyDown(keyCodesSkip)) Skip();
+    }
+
+    private bool getKeyDown(KeyCode[] keyCodes)
+    {
+        var a = false;
+        foreach (var keyCode in keyCodes)
         {
-            Skip();
+            a = a || Input.GetKeyDown(keyCode);
         }
+
+        return a;
     }
 
     private void Skip()
@@ -70,42 +80,12 @@ public class DialogueManager : MonoBehaviour
                 ShowAllText();
             }
         }
-
-        /*if (_logKey == LogKey.Dialogue)
-        {
-            if (_sentences.Count == 0 || _letterColors.Count == 0)
-            {
-                EndDialogue();
-            }
-            else if (_logKey == LogKey.Monologue)
-            {
-                if (_sentences.Count == 0 || _letterColors.Count == 0)
-                {
-                    EndMonologue();
-                }
-            }
-        }*/
     }
 
     private void ShowAllText()
     {
         _isAllText = true;
-
-        /*if (_logKey == LogKey.Dialogue)
-        {
-            if (_is1Field)
-            {
-                _dialogueTrigger.Dialogue1Field.text = _currentSentence;
-            }
-            else
-            {
-                _dialogueTrigger.Dialogue2Field.text = _currentSentence;
-            }
-        } else if (_logKey == LogKey.Monologue)
-        {
-            _monologueTrigger.MonologueField.text = _currentSentence;
-        }*/
-
+        
         var currentSentenceCharArr = _currentSentence.ToCharArray();
         var currentLetterColorsCharArr = _currentLetterColors.ToCharArray();
 
@@ -227,7 +207,6 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                //_monologueTrigger.Monologue.Sentences.Length
 
                 _currentSentence = _sentences.Dequeue();
                 _currentLetterColors = _letterColors.Dequeue();
