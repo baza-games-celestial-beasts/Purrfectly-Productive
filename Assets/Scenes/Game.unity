@@ -938,7 +938,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -1.776357e-15, y: -0.000000029203735, z: -5.187626e-23, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000029203733, z: 1.2675628e-31, w: 1}
   m_LocalPosition: {x: 0.651905, y: -0.056772623, z: -6.6724625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1019,6 +1019,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 49c1febfa7471234f9f44e79178af25f, type: 3}
   - {fileID: 8300000, guid: b4412a12e6fc03844a909696029962e7, type: 3}
   - {fileID: 8300000, guid: 1d50e8c009990f04aa739a98cf117613, type: 3}
+  - {fileID: 8300000, guid: c9ec79d1e417ffb41acd00b61412ccf4, type: 3}
   delayTime: 0
 --- !u!82 &519420036
 AudioSource:
@@ -2543,15 +2544,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.776357e-15
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029203735
+      value: -0.000000029203733
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.187626e-23
+      value: 1.2675628e-31
       objectReference: {fileID: 0}
     - target: {fileID: 7570954202480776968, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_RootOrder
