@@ -1,6 +1,5 @@
 using UI.Windows_Manager;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace UI.Menu
