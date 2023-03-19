@@ -70,6 +70,9 @@ namespace Generator_Logic
 
         private void BreakItem()
         {
+            if (healthyItems.Count == 0)
+                return;
+            
             var targetIndex = Random.Range(0, healthyItems.Count);
             var targetItem = healthyItems[targetIndex];
             healthyItems.RemoveAt(targetIndex);
