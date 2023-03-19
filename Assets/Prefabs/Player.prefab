@@ -502,6 +502,8 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   playerAnimator: {fileID: 273917394152987847}
+  _renderer: {fileID: 7570954202369647195}
+  targetLadder: {fileID: 0}
 --- !u!114 &1895702328456521132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,4 +516,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e1ef67bd5a69041b5d0095dd615315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movement: {fileID: 0}
+  playerPopup: {fileID: 0}
   catCenter: {fileID: 5415674797011175657}
