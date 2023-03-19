@@ -360,7 +360,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -10.059542, y: 0.9400091}
+  m_Offset: {x: -9.081101, y: 0.9400091}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -371,7 +371,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1249619, y: 14.363913}
+  m_Size: {x: 3.081843, y: 14.363913}
   m_EdgeRadius: 0
 --- !u!61 &5187587377783858967
 BoxCollider2D:
@@ -386,7 +386,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 10.149799, y: 0.67938757}
+  m_Offset: {x: 9.153239, y: 0.67938757}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -397,7 +397,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2941971, y: 14.616986}
+  m_Size: {x: 3.2873173, y: 14.616986}
   m_EdgeRadius: 0
 --- !u!61 &6733439421757122547
 BoxCollider2D:
@@ -412,7 +412,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28734016, y: 7.46719}
+  m_Offset: {x: -0.28734016, y: 6.543107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -423,7 +423,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.283764, y: 1.4543185}
+  m_Size: {x: 20.283764, y: 3.302485}
   m_EdgeRadius: 0
 --- !u!61 &2711713855212820766
 BoxCollider2D:
@@ -438,7 +438,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2075243, y: -6.497096}
+  m_Offset: {x: 0.2075243, y: -6.0078754}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -449,7 +449,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 19.868715, y: 1.9897289}
+  m_Size: {x: 19.868715, y: 2.9681697}
   m_EdgeRadius: 0
 --- !u!1 &1767747067635727211
 GameObject:
