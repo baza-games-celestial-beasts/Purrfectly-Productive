@@ -33,7 +33,7 @@ namespace Generator_Logic
 
         private Collider2D _interactionCollider;
 
-        private bool CanFix => Game.inst.inventory.TryTakeItem(targetItem) && CheckLadder;
+        protected virtual bool CanFix => Game.inst.inventory.TryTakeItem(targetItem) && CheckLadder;
         private bool CheckLadder => !canFixOnLadderOnly || (canFixOnLadderOnly && Game.inst.player.isOnLadder);
 
         public event Action<GeneratorItem> OnFixed;
