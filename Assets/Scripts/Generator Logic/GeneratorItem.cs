@@ -5,18 +5,28 @@ using UnityEngine;
 namespace Generator_Logic
 {
     [RequireComponent(typeof(Animator))]
-    public class GeneratorItem : MonoBehaviour
+    public class GeneratorItem : MonoBehaviour, IInteractable
     {
         #region Variables
         [SerializeField, ReadOnly] 
         private GeneratorItemState currentState;
-
+        [SerializeField] private Transform popUpTransform;
+        [Space(10)]
+        [SerializeField, TextArea] private string requiredItemText;
+        [SerializeField, TextArea] private string interactText;
+        [SerializeField] private ItemType targetItem;
         [SerializeField] private GameObject patch;
+        
+        public Vector2 popupPos => popUpTransform.position + Vector3.up * 0.5f;
 
         private Animator _animator;
         private static readonly int IsBroken = Animator.StringToHash("IsBroken");
         private static readonly int IsHealthy = Animator.StringToHash("IsHealthy");
 
+        private Collider2D _interactionCollider;
+
+        private bool CanFix => Game.inst.inventory.TryTakeItem(targetItem);
+        
         public event Action<GeneratorItem> OnFixed;
         public event Action<GeneratorItem> OnBroken; 
         #endregion
@@ -24,6 +34,7 @@ namespace Generator_Logic
         private void Start()
         {
             _animator = GetComponent<Animator>();
+            _interactionCollider = GetComponent<Collider2D>();
             
             ChangeState(GeneratorItemState.Health);
         }
@@ -33,6 +44,7 @@ namespace Generator_Logic
         {
             currentState = targetState;
 
+            _interactionCollider.enabled = currentState == GeneratorItemState.Broken;
             UpdatePatch();
 
             switch (targetState)
@@ -75,6 +87,22 @@ namespace Generator_Logic
             {
                 patch.SetActive(currentState == GeneratorItemState.Fixed);
             }
+        }
+        
+        public void Interact()
+        {
+            if (currentState != GeneratorItemState.Broken) return;
+            
+            if (CanFix) {
+                Game.inst.inventory.TakeItem(targetItem);
+
+                ChangeState(GeneratorItemState.Fixed);
+            }
+        }
+
+        public string InteractText()
+        {
+            return CanFix ? interactText : requiredItemText;
         }
     }
 }
