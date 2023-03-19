@@ -58,6 +58,7 @@ public class Game : MonoBehaviour
             buildings[i].Tick();
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.I)) {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             ItemEntity item = SpawnItem(GameUtils.RandomItem(), pos);
@@ -68,6 +69,7 @@ public class Game : MonoBehaviour
                 inventory.DamageItem(inventory.items[i], 0.2f);
             }
         }
+        */
 
         slotsUi.Tick();
     }
