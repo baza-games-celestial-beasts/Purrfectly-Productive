@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     private string _currentSentence;
     private string _currentLetterColors;
     private string _endDialogueKey = "Other";
-    private KeyCode[] keyCodesSkip = { KeyCode.KeypadEnter, KeyCode.Space};
+    private KeyCode[] keyCodesSkip = { KeyCode.KeypadEnter, KeyCode.Space, KeyCode.Q};
 
     #endregion
 
@@ -53,18 +53,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (getKeyDown(keyCodesSkip)) Skip();
-    }
-
-    private bool getKeyDown(KeyCode[] keyCodes)
-    {
-        var a = false;
-        foreach (var keyCode in keyCodes)
+        foreach (var keyCode in keyCodesSkip)
         {
-            a = a || Input.GetKeyDown(keyCode);
+            if (Input.GetKeyDown(keyCode))
+            {
+                Debug.Log(keyCode + " was pressed");
+                Skip();
+            }
         }
-
-        return a;
     }
 
     private void Skip()
