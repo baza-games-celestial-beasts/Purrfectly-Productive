@@ -11,6 +11,7 @@ namespace UI.Menu
         private void Start()
         {
             _slider = GetComponent<Slider>();
+            _slider.value = AudioListener.volume;
             _slider.onValueChanged.AddListener(ChangeValue);
         }
 
