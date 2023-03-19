@@ -63,7 +63,7 @@ Transform:
   - {fileID: 3769176652962921271}
   - {fileID: 6847169051216208637}
   - {fileID: 280538187086270681}
-  - {fileID: 6847169050537921260}
+  - {fileID: 6847169050508762187}
   m_Father: {fileID: 6847169050750531205}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -304,7 +304,7 @@ MonoBehaviour:
   hotFireController: {fileID: 22100000, guid: 5389e581ddcfd0e4b9d88214b51eb702, type: 2}
   coldFireController: {fileID: 22100000, guid: 5c0e4194e601d98438c86c5990176f6f, type: 2}
   wing: {fileID: 2725408694601210886}
-  thermometer: {fileID: 1492045732743177579}
+  thermometer: {fileID: 3755189598197948542}
 --- !u!1 &2525767146937207806
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,11 +422,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3210132727038556129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 3.26, z: 0}
+  m_LocalPosition: {x: -0.089, y: 3.878, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6847169050508762187}
+  m_Father: {fileID: 6847169050537921260}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3595233381868977122
@@ -6231,9 +6231,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6847169050508762187}
   - component: {fileID: 6847169050508762184}
-  - component: {fileID: 77754115050973851}
-  - component: {fileID: 1492045732743177579}
-  - component: {fileID: 5106526393419198886}
   m_Layer: 0
   m_Name: Thermometer
   m_TagString: Untagged
@@ -6252,10 +6249,9 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2019742162022195250}
-  m_Father: {fileID: 6847169050750531205}
-  m_RootOrder: 8
+  m_Children: []
+  m_Father: {fileID: 3399427443209855017}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050508762184
 SpriteRenderer:
@@ -6309,83 +6305,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
---- !u!95 &77754115050973851
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1492045732743177579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  requiredItemText: 
-  interactText: 
-  targetItem: 0
-  canFixOnLadderOnly: 1
-  blinkOnBroken: 1
-  patch: {fileID: 0}
-  rend: {fileID: 6847169050508762184}
-  popUpTransform: {fileID: 2019742162022195250}
-  healthEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  brokenEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  fixEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!61 &5106526393419198886
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6847169050508762186}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5584244, y: 2.9472015}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 8, y: 4}
-    newSize: {x: 8, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.46479928, y: 0.55048895}
-  m_EdgeRadius: 0
 --- !u!1 &6847169050537921263
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,6 +6316,8 @@ GameObject:
   - component: {fileID: 6847169050537921260}
   - component: {fileID: 6847169050537921261}
   - component: {fileID: 8129908185811144703}
+  - component: {fileID: 3755189598197948542}
+  - component: {fileID: 3404783575811436260}
   m_Layer: 0
   m_Name: Funnel
   m_TagString: Untagged
@@ -6415,9 +6336,10 @@ Transform:
   m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3399427443209855017}
-  m_RootOrder: 4
+  m_Children:
+  - {fileID: 2019742162022195250}
+  m_Father: {fileID: 6847169050750531205}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6847169050537921261
 SpriteRenderer:
@@ -6492,6 +6414,63 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3755189598197948542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050537921263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19024405a05d7e944b97d23d02e2305c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  requiredItemText: "\u041D\u0443\u0436\u0435\u043D \u0443\u0433\u043E\u043B\u044C"
+  interactText: "\u0417\u0430\u043A\u0438\u043D\u0443\u0442\u044C \u0443\u0433\u043E\u043B\u044C
+    [E]"
+  targetItem: 0
+  canFixOnLadderOnly: 1
+  blinkOnBroken: 1
+  patch: {fileID: 0}
+  rend: {fileID: 6847169050537921261}
+  popUpTransform: {fileID: 2019742162022195250}
+  healthEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  brokenEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  fixEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!61 &3404783575811436260
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847169050537921263}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 3.5985193}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 8, y: 4}
+    newSize: {x: 8, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.4569805, y: 0.8029611}
+  m_EdgeRadius: 0
 --- !u!1 &6847169050664731380
 GameObject:
   m_ObjectHideFlags: 0
@@ -6613,7 +6592,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenItemsToDisplay: 7
-  animator: {fileID: 6847169050664731378}
   fixedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -6769,7 +6747,7 @@ MonoBehaviour:
   requiredItemText: "\u041D\u0443\u0436\u043D\u044B \u043D\u0438\u0442\u043A\u0438"
   interactText: "\u0417\u0430\u0448\u0438\u0442\u044C [E]"
   targetItem: 8
-  canFixOnLadderOnly: 1
+  canFixOnLadderOnly: 0
   blinkOnBroken: 1
   patch: {fileID: 0}
   rend: {fileID: 6847169050726800270}
@@ -6874,7 +6852,7 @@ Transform:
   - {fileID: 6847169049757117048}
   - {fileID: 6847169049878669865}
   - {fileID: 6847169050726800256}
-  - {fileID: 6847169050508762187}
+  - {fileID: 6847169050537921260}
   - {fileID: 3399427443209855017}
   - {fileID: 6847169050664731381}
   - {fileID: 1861005614}
@@ -7114,7 +7092,7 @@ MonoBehaviour:
   requiredItemText: "\u041D\u0443\u0436\u043D\u0430 \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0430"
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0431\u0430\u0442\u0430\u0440\u0435\u0439\u043A\u0443"
   targetItem: 7
-  canFixOnLadderOnly: 1
+  canFixOnLadderOnly: 0
   blinkOnBroken: 1
   patch: {fileID: 0}
   rend: {fileID: 6847169050750578250}
@@ -7602,9 +7580,9 @@ MonoBehaviour:
   interactText: "\u0412\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u043F\u043B\u0430\u0442\u043A\u0443"
   targetItem: 6
   canFixOnLadderOnly: 0
-  blinkOnBroken: 0
+  blinkOnBroken: 1
   patch: {fileID: 6847169051462200159}
-  rend: {fileID: 0}
+  rend: {fileID: 6847169051382540136}
   popUpTransform: {fileID: 1309125398896121821}
   healthEvent:
     m_PersistentCalls:
