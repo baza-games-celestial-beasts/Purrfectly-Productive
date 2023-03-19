@@ -6430,7 +6430,7 @@ MonoBehaviour:
   requiredItemText: "\u041D\u0443\u0436\u0435\u043D \u0443\u0433\u043E\u043B\u044C"
   interactText: "\u0417\u0430\u043A\u0438\u043D\u0443\u0442\u044C \u0443\u0433\u043E\u043B\u044C
     [E]"
-  targetItem: 0
+  targetItem: 4
   canFixOnLadderOnly: 1
   blinkOnBroken: 1
   patch: {fileID: 0}
@@ -6871,7 +6871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6441352327dc1294c87f06188f5de590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minBreakTime: 5
+  minBreakTime: 7
   maxBreakTime: 15
   brokenItemsToStop: 4
   brokenItemsToLose: 8
