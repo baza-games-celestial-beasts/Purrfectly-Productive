@@ -6,7 +6,7 @@ using Zenject;
 namespace Fabrics
 {
     
-    public class Fabric: Building
+    public class Fabric: Building, IInteractable
     {
         public FabricState state;
 
@@ -25,6 +25,8 @@ namespace Fabrics
         public SpriteRenderer outputSprite;
 
         public bool IsBusy => !buildingTime.IsReady && !delayCooldown.IsReady;
+
+        public Vector2 popupPos => transform.position + Vector3.up * 0.5f;
 
 
         // TODO: add max buffer size
@@ -61,6 +63,7 @@ namespace Fabrics
             fillIndicator.fillAmount = 0f;
         }
 
+        /*
         private void OnTriggerStay2D(Collider2D collision) {
             if(state == FabricState.Idle) {
                 PlayerLogic playerLogic = collision.GetComponent<PlayerLogic>();
@@ -78,7 +81,22 @@ namespace Fabrics
                 }
             }
         }
+        */
 
+        public void Interact() {
+            if (state == FabricState.Idle) {
+                if (Game.inst.inventory.TryTakeItem(inputItem.type)) {
+                    Game.inst.inventory.TakeItem(inputItem.type);
+
+                    craftProgress = 0f;
+                    state = FabricState.IsCrafting;
+                }
+            }
+        }
+
+        public string InteractText() {
+            return "Craft [E]";
+        }
     }
 
     public enum FabricState {

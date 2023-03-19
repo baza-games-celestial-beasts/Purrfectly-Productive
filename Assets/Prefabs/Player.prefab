@@ -166,6 +166,37 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1627789911}
+--- !u!1 &2964499382721365562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2230648034901529348}
+  m_Layer: 0
+  m_Name: CatCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2230648034901529348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2964499382721365562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.622, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7570954202480776968}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7570954202369647174
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +328,6 @@ GameObject:
   - component: {fileID: 7570954202480776974}
   - component: {fileID: 7570954202480776975}
   - component: {fileID: -7161212998008067062}
-  - component: {fileID: 5218866428806595774}
   - component: {fileID: 1040806376883013735}
   m_Layer: 0
   m_Name: Player
@@ -320,6 +350,7 @@ Transform:
   m_Children:
   - {fileID: 7570954202369647173}
   - {fileID: 2114901138}
+  - {fileID: 2230648034901529348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -386,19 +417,6 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   playerAnimator: {fileID: 273917394152987847}
---- !u!114 &5218866428806595774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7570954202480776969}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: addba5a96d70460691c9676199c48a83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
 --- !u!114 &1040806376883013735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,3 +429,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61e1ef67bd5a69041b5d0095dd615315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catCenter: {fileID: 2230648034901529348}

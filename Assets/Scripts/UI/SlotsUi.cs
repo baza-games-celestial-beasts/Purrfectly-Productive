@@ -33,7 +33,7 @@ namespace UI
                             Debug.Log("A2");
                             ItemType itemType = slot.currentItem.type;
                             Game.inst.inventory.TakeItem(itemType);
-                            Game.inst.SpawnItem(itemType, Game.inst.player.transform.position + Vector3.up * -0.5f);
+                            Game.inst.SpawnItem(itemType, Game.inst.player.transform.position + Vector3.up * -0.5f + (Vector3)Random.insideUnitCircle * 0.3f);
                         }
                     }
                 };

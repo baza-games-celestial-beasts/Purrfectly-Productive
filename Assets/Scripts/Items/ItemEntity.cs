@@ -13,9 +13,9 @@ public class ItemEntity : MonoBehaviour, IInteractable
 
     public ItemType itemType { get; private set; }
 
-    public Vector2 popupPos => iconT.position + Vector3.up * 0.5f;
+    public Vector2 popupPos => iconT.position + Vector3.up * 0.25f;
 
-    public bool doFloatAnimation = true;
+    [NonSerialized, HideInInspector] public bool doFloatAnimation = true;
 
     public Action<ItemEntity> OnItemPickup;
 
@@ -65,5 +65,9 @@ public class ItemEntity : MonoBehaviour, IInteractable
 
             Game.inst.DestroyItem(this);
         }
+    }
+
+    public string InteractText() {
+        return "Pick [E]";
     }
 }

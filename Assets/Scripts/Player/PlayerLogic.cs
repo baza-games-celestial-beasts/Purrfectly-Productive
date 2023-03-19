@@ -6,14 +6,17 @@ using UnityEngine;
 public class PlayerLogic : MonoBehaviour
 {
 
+    public Transform catCenter;
+
     public IInteractable targetInteractable;
 
     private float interactPressTime;
 
     private List<Collider2D> interactablesInArea;
-    private Collider2D[] colliderCache;
+    private Collider2D[] colliderCache = new Collider2D[64];
 
-    Vector2 pos => transform.position;
+    Vector2 pos => catCenter.position;
+    float interactRadius = 0.4f;
 
     private void Update() {
         /*
@@ -21,30 +24,36 @@ public class PlayerLogic : MonoBehaviour
             interactPressTime = Time.time + 0.1f;
         }
         */
-       
-        int colliderCount = Physics2D.OverlapCircleNonAlloc(pos, 2f, colliderCache);
 
         targetInteractable = null;
+
+        int colliderCount = Physics2D.OverlapCircleNonAlloc(pos, interactRadius, colliderCache);
+
         List<IInteractable> interactables = colliderCache
-            .Where(x => x.GetComponent<IInteractable>() != null)
-            .OrderBy(x => x.ClosestPoint(pos).magnitude)
+            .Take(colliderCount)
+            .Where(x => x != null && x.GetComponent<IInteractable>() != null)
+            .OrderBy(x => (pos -  (Vector2)x.transform.position).magnitude)
             .Select(x => x.GetComponent<IInteractable>())
             .ToList();
 
         if(interactables.Count > 0) {
+            //Debug.Log("C " + interactables.Count);
+
             targetInteractable = interactables[0];
-            Game.inst.actionPopup.Draw(targetInteractable.popupPos, "[E]");
+            Game.inst.actionPopup.Draw(targetInteractable.popupPos, targetInteractable.InteractText());
 
             if (Input.GetKeyDown(KeyCode.E)) {
                 targetInteractable.Interact();
             }
         } else {
-            Game.inst.actionPopup.Draw(targetInteractable.popupPos, null);
+            //Debug.Log("B");
+            Game.inst.actionPopup.Draw(Vector2.zero, null);
         }        
     }
 
     private void OnDrawGizmos() {
-        Gizmos.DrawSphere(pos, 2f);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(pos, interactRadius);
     }
 
     /*
@@ -66,4 +75,5 @@ public class PlayerLogic : MonoBehaviour
 public interface IInteractable {
     Vector2 popupPos { get; }
     void Interact();
+    string InteractText();
 }
