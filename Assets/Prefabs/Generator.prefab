@@ -6871,9 +6871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6441352327dc1294c87f06188f5de590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  breakTime: 5
+  minBreakTime: 5
+  maxBreakTime: 15
   brokenItemsToStop: 4
-  brokenItemsToLose: 10
+  brokenItemsToLose: 8
 --- !u!114 &6337347505162610289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6889,7 +6890,7 @@ MonoBehaviour:
   spawnTransform: {fileID: 1861005614}
   cat: {fileID: 3876183284194724026, guid: 0c9056b315c2dec4391fefca7c662cac, type: 3}
   spawnTime: 3
-  targetCount: 50
+  targetCount: 30
 --- !u!60 &7734797046858269889
 PolygonCollider2D:
   m_ObjectHideFlags: 0

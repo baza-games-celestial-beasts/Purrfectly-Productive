@@ -15,6 +15,7 @@ public class PawWasher : MonoBehaviour, IInteractable
 
     public void Interact() {
         Game.inst.player.pawsAreWashed = true;
+        StartCoroutine(SmearPaws());
     }
 
     public string InteractText() {

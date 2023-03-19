@@ -12,7 +12,8 @@ namespace Generator_Logic
     public class Generator : MonoBehaviour
     {
         #region Variables
-        [SerializeField] private float breakTime;
+        [SerializeField] private float minBreakTime = 5;
+        [SerializeField] private float maxBreakTime = 15;
         [Space(10)]
         [SerializeField] private int brokenItemsToStop;
         [SerializeField] private int brokenItemsToLose;
@@ -35,11 +36,16 @@ namespace Generator_Logic
         #endregion
 
         #region Properties
-        public float GeneratorStopTime => breakTime * (brokenItemsToLose - brokenItemsToStop);
-        public float FullTimeToDeath => breakTime * brokenItemsToLose;
-        public float LeftTimeToDeath => breakTime * (brokenItemsToLose - BrokenItemsCount);
+        public float GeneratorStopTime =>  (brokenItemsToLose - brokenItemsToStop);
+        public float BrokenItemsToLose => brokenItemsToLose;
+        private float LeftItemsToDeath => (brokenItemsToLose - BrokenItemsCount);
 
         public int BrokenItemsCount => brokenItems.Count;
+
+        public float HpValue => LeftItemsToDeath / BrokenItemsToLose;
+        
+        [ShowInInspector, ReadOnly]
+        private float BreakTime => Mathf.Lerp(minBreakTime, maxBreakTime, (1- HpValue));
         #endregion
 
         private void Start()
@@ -64,7 +70,7 @@ namespace Generator_Logic
         {
             while (true)
             {
-                yield return new WaitForSeconds(breakTime);
+                yield return new WaitForSeconds(BreakTime);
                 BreakItem();
             }
             // ReSharper disable once IteratorNeverReturns
@@ -88,7 +94,7 @@ namespace Generator_Logic
                 return;
             }
 
-            if (brokenItems.Count >= brokenItemsToStop)
+            if (brokenItems.Count > brokenItemsToStop)
             {
                 OnBroken?.Invoke();
             }
