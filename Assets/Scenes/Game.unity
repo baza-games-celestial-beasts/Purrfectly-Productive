@@ -1014,7 +1014,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clips:
   - {fileID: 8300000, guid: 2850b106ececda24b8587ca2f3cf60e4, type: 3}
+  - {fileID: 8300000, guid: 09512e3c206c85a45b485cc9a6da64d7, type: 3}
+  - {fileID: 8300000, guid: 4b1874213037bcb44bcb20799b4a1b5e, type: 3}
+  - {fileID: 8300000, guid: 49c1febfa7471234f9f44e79178af25f, type: 3}
   - {fileID: 8300000, guid: b4412a12e6fc03844a909696029962e7, type: 3}
+  - {fileID: 8300000, guid: 1d50e8c009990f04aa739a98cf117613, type: 3}
   delayTime: 0
 --- !u!82 &519420036
 AudioSource:
