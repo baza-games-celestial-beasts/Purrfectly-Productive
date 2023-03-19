@@ -1259,7 +1259,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -0, y: -0.000000029203733, z: 1.2675628e-31, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000029203733, z: -1.2675628e-31, w: 1}
   m_LocalPosition: {x: 0.15884262, y: -1.1207726, z: -6.6724625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2021,6 +2021,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1248191778}
     m_Modifications:
+    - target: {fileID: 1160926697366499439, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Size.x
+      value: 3.081843
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160926697366499439, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Offset.x
+      value: -9.081101
+      objectReference: {fileID: 0}
     - target: {fileID: 1767747067584906489, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2069,13 +2077,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: MapGrid
       objectReference: {fileID: 0}
+    - target: {fileID: 2711713855212820766, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Size.y
+      value: 2.9681697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2711713855212820766, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Offset.y
+      value: -6.0078754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187587377783858967, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Size.x
+      value: 3.2873173
+      objectReference: {fileID: 0}
+    - target: {fileID: 5187587377783858967, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
+      propertyPath: m_Offset.x
+      value: 9.153239
+      objectReference: {fileID: 0}
     - target: {fileID: 6733439421757122547, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
       propertyPath: m_Size.y
-      value: 1.4543185
+      value: 3.302485
       objectReference: {fileID: 0}
     - target: {fileID: 6733439421757122547, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
       propertyPath: m_Offset.y
-      value: 7.46719
+      value: 6.543107
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 476ec1120afe25d45b0b9ec3c9afe4e4, type: 3}
@@ -3394,7 +3418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.2675628e-31
+      value: -1.2675628e-31
       objectReference: {fileID: 0}
     - target: {fileID: 7570954202480776968, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_RootOrder
