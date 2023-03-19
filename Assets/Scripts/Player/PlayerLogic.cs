@@ -1,4 +1,5 @@
 using Player;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -20,6 +21,9 @@ public class PlayerLogic : MonoBehaviour
 
     Vector2 pos => catCenter.position;
     float interactRadius = 0.4f;
+
+    public bool isOnLadder => movement.moveState == PlayerMoveState.LadderClimb;
+    [NonSerialized, HideInInspector] public bool pawsAreWashed = true;
 
     private void Awake() {
         movement = GetComponent<PlayerMovement>();

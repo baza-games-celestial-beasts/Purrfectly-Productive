@@ -17,7 +17,7 @@ namespace Player
         
         private Rigidbody2D _rigidbody2D;
 
-        private PlayerMoveState moveState;
+        public PlayerMoveState moveState { get; private set; }
         private float ladderY;
         public Ladder targetLadder;
         
@@ -73,8 +73,9 @@ namespace Player
             playerAnimator.SetClimbSpeed(Mathf.RoundToInt(Mathf.Abs(verticalMove)));
 
             if(ladderY >= 0.9f) {
+                /*
                 if (Game.inst.inventory.TryTakeItem(ItemType.Patch)) {
-                    Game.inst.actionPopup.Draw(transform.position + Vector3.up * 1.0f, "[E]\nВставить заплатку");
+                    //Game.inst.actionPopup.Draw(transform.position + Vector3.up * 1.0f, "[E]\nВставить заплатку");
 
                     if (Input.GetKeyDown(KeyCode.E)) {
                         Game.inst.inventory.TakeItem(ItemType.Patch);
@@ -82,10 +83,11 @@ namespace Player
                         Debug.Log("DO PATCH");
                     }                    
                 } else {
-                    Game.inst.actionPopup.Draw(transform.position + Vector3.up * 1.0f, "[E]\nНужна заплатка");
+                    //Game.inst.actionPopup.Draw(transform.position + Vector3.up * 1.0f, "[E]\nНужна заплатка");
                 }   
+                */
             } else {
-                Game.inst.actionPopup.Draw(transform.position + Vector3.up * 1.0f, "Вверх! [W]\nСлезть [E]");
+                Game.inst.actionPopup.Draw(transform.position + Vector3.up * 0.3f, "Вверх! [W]\nСлезть [E]");
 
                 if(Input.GetKeyDown(KeyCode.E)) {
                     targetLadder.Interact();

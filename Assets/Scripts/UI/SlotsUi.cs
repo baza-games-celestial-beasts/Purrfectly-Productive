@@ -34,6 +34,8 @@ namespace UI
                             ItemType itemType = slot.currentItem.type;
                             Game.inst.inventory.TakeItem(itemType);
                             Game.inst.SpawnItem(itemType, Game.inst.player.transform.position + Vector3.up * -0.5f + (Vector3)Random.insideUnitCircle * 0.3f);
+
+                            MSound.Play("pickup_item", transform.position, 1.0f, 0.7f);
                         }
                     }
                 };
