@@ -16,7 +16,8 @@ public class MonologueTrigger : MonoBehaviour
     [SerializeField] private bool isCatScene;
     [FormerlySerializedAs("isTitle")] [SerializeField] private bool isStatic;
     [SerializeField] private bool isOneTime;
-
+    [SerializeField] private bool isStartAtExactTime;
+    [SerializeField] private float timeOfStart;
     [FormerlySerializedAs("dialogueField")]
     [Header("Text Fields")]
     [SerializeField] private Text monologueField;
@@ -24,6 +25,17 @@ public class MonologueTrigger : MonoBehaviour
     private bool _isOpen;
     private bool _isCanTrigger = true;
 
+    public bool IsStartAtExactTime
+    {
+        get => isStartAtExactTime;
+        set => isStartAtExactTime = value;
+    }
+    public float TimeOfStart
+    {
+        get => timeOfStart;
+        set => timeOfStart = value;
+    } 
+    
     public Monologue Monologue
     {
         get => monologue;
@@ -53,6 +65,20 @@ public class MonologueTrigger : MonoBehaviour
         if (isCatScene || isStatic)
         {
             TriggerMonologue();
+        }
+
+        if (isStartAtExactTime)
+        {
+            timeOfStart += Time.time;
+        }
+    }
+
+    private void Update()
+    {
+        if (isStartAtExactTime && Time.time > timeOfStart)
+        {
+            TriggerMonologue();
+            isStartAtExactTime = false;
         }
     }
 
