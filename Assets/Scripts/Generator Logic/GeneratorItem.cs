@@ -18,6 +18,7 @@ namespace Generator_Logic
         private static readonly int IsHealthy = Animator.StringToHash("IsHealthy");
 
         public event Action<GeneratorItem> OnFixed;
+        public event Action<GeneratorItem> OnBroken; 
         #endregion
         
         private void Start()
@@ -51,6 +52,7 @@ namespace Generator_Logic
         private void Break()
         {
             _animator.SetTrigger(IsBroken);
+            OnBroken?.Invoke(this);
         }
 
         private void Fix()
