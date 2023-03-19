@@ -21,6 +21,8 @@ public class PlayerLogic : MonoBehaviour
     Vector2 pos => catCenter.position;
     float interactRadius = 0.4f;
 
+    public bool isOnLadder => movement.moveState == PlayerMoveState.LadderClimb;
+
     private void Awake() {
         movement = GetComponent<PlayerMovement>();
     }
