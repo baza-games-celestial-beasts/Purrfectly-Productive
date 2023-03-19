@@ -1,9 +1,14 @@
+using Player;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class PlayerLogic : MonoBehaviour
 {
+
+    public PlayerMovement movement;
+
+    public ActionPopup playerPopup;
 
     [SerializeField] private Transform catCenter;
     [SerializeField] private IInteractable targetInteractable;
@@ -15,6 +20,10 @@ public class PlayerLogic : MonoBehaviour
 
     Vector2 pos => catCenter.position;
     float interactRadius = 0.4f;
+
+    private void Awake() {
+        movement = GetComponent<PlayerMovement>();
+    }
 
     private void Update() {
         /*
@@ -45,7 +54,8 @@ public class PlayerLogic : MonoBehaviour
             }
         } else {
             //Debug.Log("B");
-            Game.inst.actionPopup.Draw(Vector2.zero, null);
+            Game.inst.actionPopup.ClearIfNoRecentDraws();
+            //Game.inst.actionPopup.Draw(Vector2.zero, null);
         }        
     }
 
