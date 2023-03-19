@@ -309,7 +309,7 @@ public class DialogueManager : MonoBehaviour
             case 'd':
                 return "#4D234A";
             case 'o':
-                return "#D4715D";
+                return "#e0ddea";
             case 'y':
                 return "#F3B486";
             case 'g':

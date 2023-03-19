@@ -731,8 +731,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 20
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1 &269035792
 GameObject:
@@ -890,8 +890,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 30
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1001 &294348367
 PrefabInstance:
@@ -1384,8 +1384,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 25
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!4 &434725140 stripped
 Transform:
@@ -2103,8 +2103,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 15
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1001 &713357861
 PrefabInstance:
@@ -2225,8 +2225,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 5
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!212 &973105430 stripped
 SpriteRenderer:
@@ -2436,8 +2436,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 10
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1 &1092578786
 GameObject:
@@ -2529,8 +2529,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 35
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!224 &1138859144 stripped
 RectTransform:
@@ -3076,7 +3076,7 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
+  isStartAtExactTime: 0
   timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1 &1559558707
@@ -3674,8 +3674,8 @@ MonoBehaviour:
   isCatScene: 0
   isStatic: 0
   isOneTime: 0
-  isStartAtExactTime: 1
-  timeOfStart: 40
+  isStartAtExactTime: 0
+  timeOfStart: 0
   monologueField: {fileID: 27175184}
 --- !u!1 &2081989990
 GameObject:
