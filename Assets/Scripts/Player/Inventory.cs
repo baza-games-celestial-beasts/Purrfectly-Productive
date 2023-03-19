@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool CheckPutItem(ItemType itemType)
+    public bool TryPutItem(ItemType itemType)
     {
         for (int i = 0; i < items.Length; i++)
         {
@@ -92,8 +92,8 @@ public class Inventory : MonoBehaviour
 [System.Serializable]
 public class ItemStack
 {
-    public ItemType type { get; private set; }
-    public float durability = 1.0f;
+    public ItemType type;
+    [NonSerialized] public float durability = 1.0f;
 
     public ItemStack(ItemType itemType)
     {
