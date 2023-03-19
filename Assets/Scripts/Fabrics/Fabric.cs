@@ -38,7 +38,7 @@ namespace Fabrics
             SO_ItemInfo outputItemInfo = Game.GetItemInfo(outputItem.type);
 
             inputSprite.sprite = inputItemInfo.icon;
-            outputSprite.sprite = outputItemInfo.icon;
+            outputSprite.sprite = outputItemInfo.icon;            
         }
 
         public override void Tick() {
@@ -50,7 +50,7 @@ namespace Fabrics
                     OutputItem();
                 }
             } else if (state == FabricState.Idle) {
-
+                fillIndicator.fillAmount = 0f;
             }
         }
 

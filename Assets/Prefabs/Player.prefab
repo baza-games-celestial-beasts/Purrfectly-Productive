@@ -203,7 +203,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114901137}
-  m_LocalRotation: {x: -0, y: -0.000000029203733, z: 1.2675628e-31, w: 1}
+  m_LocalRotation: {x: -1.776357e-15, y: -0.000000029203735, z: -5.187626e-23, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -250,6 +250,37 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1627789911}
+--- !u!1 &446586119771812239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5415674797011175657}
+  m_Layer: 0
+  m_Name: CatCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5415674797011175657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446586119771812239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.71, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7570954202480776968}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7570954202369647174
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +412,7 @@ GameObject:
   - component: {fileID: 7570954202480776974}
   - component: {fileID: 7570954202480776975}
   - component: {fileID: -7161212998008067062}
+  - component: {fileID: 1895702328456521132}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -403,6 +435,7 @@ Transform:
   - {fileID: 7570954202369647173}
   - {fileID: 2114901138}
   - {fileID: 228348167}
+  - {fileID: 5415674797011175657}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -469,3 +502,16 @@ MonoBehaviour:
   horizontalAxis: Horizontal
   verticalAxis: Vertical
   playerAnimator: {fileID: 273917394152987847}
+--- !u!114 &1895702328456521132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570954202480776969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e1ef67bd5a69041b5d0095dd615315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  catCenter: {fileID: 5415674797011175657}
