@@ -119,7 +119,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114901137}
-  m_LocalRotation: {x: -0, y: -0.000000029203733, z: 1.2675628e-31, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000029203733, z: -1.2675628e-31, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -239,7 +239,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1722080907
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 117e0c5a434b1fb47b25895e2a99f442, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 7570954202480776975}
   - component: {fileID: -7161212998008067062}
   - component: {fileID: 5218866428806595774}
+  - component: {fileID: 1040806376883013735}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -397,4 +398,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: addba5a96d70460691c9676199c48a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySize: 5
+  items: []
+--- !u!114 &1040806376883013735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7570954202480776969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61e1ef67bd5a69041b5d0095dd615315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

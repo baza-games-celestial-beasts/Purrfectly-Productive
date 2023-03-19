@@ -9,6 +9,7 @@ public class SO_ItemInfo : ScriptableObject
     public Sprite icon;
 }
 
+[System.Serializable]
 public enum ItemType
 {
     None,
