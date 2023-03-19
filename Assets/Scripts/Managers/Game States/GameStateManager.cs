@@ -1,5 +1,5 @@
 using System;
-using NaughtyAttributes;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Managers.Game_States
@@ -44,14 +44,16 @@ namespace Managers.Game_States
                 case GameState.Game:
                     StartGame?.Invoke();
                     break;
-                case GameState.Finish:
-                    Finish?.Invoke();
-                    break;
                 case GameState.Victory:
                     Victory?.Invoke();
+                    ChangeState(GameState.Finish);
                     break;
                 case GameState.Fail:
                     Fail?.Invoke();
+                    ChangeState(GameState.Finish);
+                    break;
+                case GameState.Finish:
+                    Finish?.Invoke();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

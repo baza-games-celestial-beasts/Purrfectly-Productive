@@ -1,19 +1,18 @@
-﻿using Managers.Game_States;
-using Managers.Scene_Manager;
-using Player;
+﻿using Generator_Logic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace Installers
 {
     public class SceneInstaller : MonoInstaller
     {
-        [SerializeField] private PlayerInventory playerInventory;
+        [SerializeField] private CatsCreator catsCreator;
+        [SerializeField] private Generator generator;
         
         public override void InstallBindings()
         {
-            Container.Bind<PlayerInventory>().FromInstance(playerInventory).AsSingle();
+            Container.Bind<CatsCreator>().FromInstance(catsCreator).AsSingle();
+            Container.Bind<Generator>().FromInstance(generator).AsSingle();
         }
     }
 }

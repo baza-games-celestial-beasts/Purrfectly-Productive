@@ -1,56 +1,57 @@
-using System;
 using System.Collections;
 using DG.Tweening;
-using UI;
 using UnityEngine;
 
-public class WindowsManager : MonoBehaviour
+namespace UI.Windows_Manager
 {
-    #region Variables
-    [SerializeField] private CanvasGroup[] windows;
-    [SerializeField] private WindowType currentWindow;
-
-    private const float SwapDuration = 0.25f;
-    #endregion
-
-    private void Start()
+    public class WindowsManager : MonoBehaviour
     {
-        
-    }
+        #region Variables
+        [SerializeField] private CanvasGroup[] windows;
+        [SerializeField] private MenuWindows currentWindow;
 
-    public void SwapWindow(WindowType window)
-    {
-        currentWindow = window;
-        foreach (var item in windows)
+        private const float SwapDuration = 0.25f;
+        #endregion
+
+        private void Start()
         {
-            CanvasGroupSwap(item, false);
+        
         }
 
-        CanvasGroupSwap(windows[(int) currentWindow], true);
-    }
-        
-    public void SwapWindow(WindowType window, float delay)
-    {
-        StartCoroutine(SwapWithDelay(window, delay));
-    }
-
-    private IEnumerator SwapWithDelay(WindowType window, float delay)
-    {
-        currentWindow = window;
-        foreach (var item in windows)
+        public void SwapWindow(MenuWindows window)
         {
-            CanvasGroupSwap(item, false);
+            currentWindow = window;
+            foreach (var item in windows)
+            {
+                CanvasGroupSwap(item, false);
+            }
+
+            CanvasGroupSwap(windows[(int) currentWindow], true);
+        }
+        
+        public void SwapWindow(MenuWindows window, float delay)
+        {
+            StartCoroutine(SwapWithDelay(window, delay));
         }
 
-        yield return new WaitForSecondsRealtime(delay);
-        CanvasGroupSwap(windows[(int) currentWindow], true);
-    }
-        
-    public static void CanvasGroupSwap(CanvasGroup canvasGroup, bool isEnabled)
-    {
-        canvasGroup.DOFade(isEnabled? 1 : 0, SwapDuration);
+        private IEnumerator SwapWithDelay(MenuWindows window, float delay)
+        {
+            currentWindow = window;
+            foreach (var item in windows)
+            {
+                CanvasGroupSwap(item, false);
+            }
 
-        canvasGroup.interactable = isEnabled;
-        canvasGroup.blocksRaycasts = isEnabled;
+            yield return new WaitForSecondsRealtime(delay);
+            CanvasGroupSwap(windows[(int) currentWindow], true);
+        }
+        
+        public static void CanvasGroupSwap(CanvasGroup canvasGroup, bool isEnabled)
+        {
+            canvasGroup.DOFade(isEnabled? 1 : 0, SwapDuration);
+
+            canvasGroup.interactable = isEnabled;
+            canvasGroup.blocksRaycasts = isEnabled;
+        }
     }
 }

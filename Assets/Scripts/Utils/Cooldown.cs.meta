@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Utils/Cooldown.cs.meta
+guid: 8119979e4a7754b03b798915d7e2a157
+========
+guid: 10f3658eeceba49c8826eb0c1fbffa93
+>>>>>>>> stas_002:Assets/Scripts/Items/ItemEntity.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
