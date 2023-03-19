@@ -20,5 +20,6 @@ public enum ItemType
     Wrench,
     Patch,
     Battery,
+    String,
     Count
 }

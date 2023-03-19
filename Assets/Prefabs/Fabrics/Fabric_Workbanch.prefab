@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5629812332556597511}
   - component: {fileID: 5629812332556597510}
   m_Layer: 0
-  m_Name: Fabric_Anvil
+  m_Name: Fabric_Workbanch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   inputItem:
     type: 2
   outputItem:
-    type: 6
+    type: 5
   buildingTime:
     valueOfCooldown: 0
   delayCooldown:
