@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -6,14 +5,13 @@ using UnityEngine;
 public class PlayerLogic : MonoBehaviour
 {
 
-    public Transform catCenter;
+    [SerializeField] private Transform catCenter;
+    [SerializeField] private IInteractable targetInteractable;
 
-    public IInteractable targetInteractable;
+    private float _interactPressTime;
 
-    private float interactPressTime;
-
-    private List<Collider2D> interactablesInArea;
-    private Collider2D[] colliderCache = new Collider2D[64];
+    private List<Collider2D> _interactablesInArea;
+    private Collider2D[] _colliderCache = new Collider2D[64];
 
     Vector2 pos => catCenter.position;
     float interactRadius = 0.4f;
@@ -27,9 +25,9 @@ public class PlayerLogic : MonoBehaviour
 
         targetInteractable = null;
 
-        int colliderCount = Physics2D.OverlapCircleNonAlloc(pos, interactRadius, colliderCache);
+        int colliderCount = Physics2D.OverlapCircleNonAlloc(pos, interactRadius, _colliderCache);
 
-        List<IInteractable> interactables = colliderCache
+        List<IInteractable> interactables = _colliderCache
             .Take(colliderCount)
             .Where(x => x != null && x.GetComponent<IInteractable>() != null)
             .OrderBy(x => (pos -  (Vector2)x.transform.position).magnitude)
