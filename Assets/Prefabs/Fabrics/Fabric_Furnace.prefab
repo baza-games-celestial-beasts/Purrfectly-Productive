@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5629812332556597511}
   - component: {fileID: 5629812332556597510}
   m_Layer: 0
-  m_Name: Fabric_Anvil
+  m_Name: Fabric_Furnace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -189,9 +189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   inputItem:
-    type: 2
+    type: 3
   outputItem:
-    type: 6
+    type: 4
   buildingTime:
     valueOfCooldown: 0
   delayCooldown:
