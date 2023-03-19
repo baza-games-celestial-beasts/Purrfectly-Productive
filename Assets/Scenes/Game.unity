@@ -655,7 +655,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6337347505162610289, guid: 1aebcc5ce4d17cd4da6801c7045437ec, type: 3}
   m_PrefabInstance: {fileID: 360683201}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712440115}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b76919bcc9e9744f91bdb961f50b498, type: 3}
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7194646523376862072, guid: 1aebcc5ce4d17cd4da6801c7045437ec, type: 3}
   m_PrefabInstance: {fileID: 360683201}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712440115}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6441352327dc1294c87f06188f5de590, type: 3}
@@ -938,7 +938,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -1.776357e-15, y: -0.000000029203735, z: -5.187626e-23, w: 1}
+  m_LocalRotation: {x: -0, y: -0.000000029203733, z: -1.2675628e-31, w: 1}
   m_LocalPosition: {x: 0.651905, y: -0.056772623, z: -6.6724625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1200,46 +1200,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &712440115 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6847169050750531204, guid: 1aebcc5ce4d17cd4da6801c7045437ec, type: 3}
-  m_PrefabInstance: {fileID: 360683201}
-  m_PrefabAsset: {fileID: 0}
---- !u!60 &712440116
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 712440115}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.5525572, y: -0.018556714}
-      - {x: -1.5064881, y: -0.53809434}
-      - {x: -1.1643374, y: -0.9742707}
-      - {x: -1.4348251, y: -1.579255}
-      - {x: -0.4575581, y: -1.612897}
-      - {x: 0.40978518, y: -1.6316068}
-      - {x: 1.4800816, y: -1.5792923}
-      - {x: 1.1989765, y: -0.90250504}
-      - {x: 1.4892191, y: -0.6415094}
-      - {x: 1.5345016, y: -0.01731655}
 --- !u!224 &1017534595 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5994632489426600455, guid: ebf179fc01e20ea4e8627dd4fb5f5290, type: 3}
@@ -2584,15 +2544,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -1.776357e-15
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029203735
+      value: -0.000000029203733
       objectReference: {fileID: 0}
     - target: {fileID: 2114901138, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -5.187626e-23
+      value: -1.2675628e-31
       objectReference: {fileID: 0}
     - target: {fileID: 7570954202480776968, guid: 5b5869c2742e5ff4dba3bdb2529e2619, type: 3}
       propertyPath: m_RootOrder
