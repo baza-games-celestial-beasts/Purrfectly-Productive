@@ -3,6 +3,7 @@
     public enum MenuWindows
     {
         Main,
-        Options
+        Options,
+        Tutorial
     }
 }

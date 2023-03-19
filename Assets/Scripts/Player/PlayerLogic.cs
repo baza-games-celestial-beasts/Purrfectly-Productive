@@ -45,7 +45,7 @@ public class PlayerLogic : MonoBehaviour
             }
         } else {
             //Debug.Log("B");
-            Game.inst.actionPopup.Draw(Vector2.zero, null);
+            //Game.inst.actionPopup.Draw(Vector2.zero, null);
         }        
     }
 

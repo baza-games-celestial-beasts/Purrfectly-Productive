@@ -13,11 +13,6 @@ namespace UI.Windows_Manager
         private const float SwapDuration = 0.25f;
         #endregion
 
-        private void Start()
-        {
-        
-        }
-
         public void SwapWindow(MenuWindows window)
         {
             currentWindow = window;

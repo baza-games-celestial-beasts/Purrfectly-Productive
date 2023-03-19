@@ -792,10 +792,10 @@ TextureImporter:
       name: Ring_Icon
       rect:
         serializedVersion: 2
-        x: 85
-        y: 215
-        width: 6
-        height: 5
+        x: 83
+        y: 211
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -826,6 +826,27 @@ TextureImporter:
       bones: []
       spriteID: 79b9727abcf22b9499d95291eb90503e
       internalID: -1494904933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menu_Ui_0
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 160
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53638315276f2734c89fafabc6ca542b
+      internalID: 978530700
       vertices: []
       indices: 
       edges: []
