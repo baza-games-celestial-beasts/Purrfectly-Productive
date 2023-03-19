@@ -28,8 +28,7 @@ namespace UI.Displays
 
         private void DisplayState()
         {
-            var targetValue = _generator.LeftTimeToDeath / _generator.FullTimeToDeath;
-            ChangeValue(targetValue);
+            ChangeValue(_generator.HpValue);
         }
         
         private void SetStopSignPosition()
@@ -37,7 +36,7 @@ namespace UI.Displays
             var targetPosition = Vector3.zero;
             
             var maxPosition = GetComponent<RectTransform>().sizeDelta.x;
-            var positionCoefficient = _generator.GeneratorStopTime / _generator.FullTimeToDeath;
+            var positionCoefficient = _generator.GeneratorStopTime / _generator.BrokenItemsToLose;
             targetPosition.x = positionCoefficient * maxPosition;
 
             stopSign.localPosition += targetPosition;
