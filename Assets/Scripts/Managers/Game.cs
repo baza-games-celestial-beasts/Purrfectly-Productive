@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 using Managers.Game_States;
+using UI;
 
 
 public class Game : MonoBehaviour
 {
     public static Game inst;
 
-    public GameUI gameUI;
+    public SlotsUi slotsUi;
     public Inventory inventory;
 
     public ItemEntity itemEntityPrefab;
@@ -43,7 +44,7 @@ public class Game : MonoBehaviour
             }
         }
 
-        gameUI.Tick();
+        slotsUi.Tick();
     }
 
     private void Init()
@@ -54,7 +55,7 @@ public class Game : MonoBehaviour
         items = new List<ItemEntity>();
 
         inventory.Init();
-        gameUI.Init();
+        slotsUi.Init();
     }
 
     public ItemEntity SpawnItem(ItemType itemType, Vector2 pos)

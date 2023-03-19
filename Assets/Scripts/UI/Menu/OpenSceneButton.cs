@@ -6,13 +6,15 @@ using Zenject;
 namespace UI.Menu
 {
     [RequireComponent(typeof(Button))]
-    public class StartGameButton : OnClickButton
+    public class OpenSceneButton : OnClickButton
     {
-        [Inject] private MySceneManager _mySceneManager;
+        [SerializeField] private SceneType targetScene;
         
+        [Inject] private MySceneManager _mySceneManager;
+
         protected override void OnClick()
         {
-            _mySceneManager.OpenScene(SceneType.Game);
+            _mySceneManager.OpenScene(targetScene);
         }
     }
 }

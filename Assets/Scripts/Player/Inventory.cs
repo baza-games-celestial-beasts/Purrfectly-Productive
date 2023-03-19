@@ -1,9 +1,6 @@
 ﻿using System;
-using UnityEditor;
 using UnityEngine;
-using System.Linq;
-using System.Collections.Generic;
-using UnityEngine.Serialization;
+using UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -39,7 +36,7 @@ public class Inventory : MonoBehaviour
             if (items[i].type == ItemType.None)
             {
                 items[i] = new ItemStack(itemType);
-                GameUI.inst.DrawItems(items);
+                SlotsUi.inst.DrawItems(items);
                 return;
             }
         }
@@ -66,7 +63,7 @@ public class Inventory : MonoBehaviour
             {
                 ItemStack result = items[i];
                 items[i] = new ItemStack(ItemType.None);
-                GameUI.inst.DrawItems(items);
+                SlotsUi.inst.DrawItems(items);
                 return items[i];
             }
         }
@@ -87,7 +84,7 @@ public class Inventory : MonoBehaviour
             items[ind] = new ItemStack(ItemType.None);
         }
 
-        GameUI.inst.DrawItems(items);
+        SlotsUi.inst.DrawItems(items);
     }
 
 }
