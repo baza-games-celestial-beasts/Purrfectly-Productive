@@ -234,7 +234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c7563e319b43a7b60f8ea2d25d85f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hotFireController: {fileID: 22100000, guid: 5389e581ddcfd0e4b9d88214b51eb702, type: 2}
+  coldFireController: {fileID: 22100000, guid: 5c0e4194e601d98438c86c5990176f6f, type: 2}
   wing: {fileID: 2725408694601210886}
+  thermometer: {fileID: 7674456776463080451}
 --- !u!1 &3595233381868977122
 GameObject:
   m_ObjectHideFlags: 0

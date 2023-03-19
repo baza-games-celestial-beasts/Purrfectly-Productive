@@ -39,11 +39,13 @@ namespace Fire
 
         private void ToColdFire(GeneratorItem _)
         {
+            Debug.Log("ToColdFire");
             _animator.runtimeAnimatorController = coldFireController;
         }
 
         private void ToHotFire(GeneratorItem _)
         {
+            Debug.Log("ToHotFire");
             _animator.runtimeAnimatorController = hotFireController;
         }
     }
